@@ -1,0 +1,11 @@
+version: '2'
+services:
+  qsf2-postgresql:
+    image: postgres:11.2
+    # volumes:
+    #     - ~/volumes/jhipster/qsf2/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=qsf2
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
