@@ -38,6 +38,8 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
+            createCache(cm, com.adeo.qsf.domain.CommandExample.class.getName());
+            createCache(cm, com.adeo.qsf.domain.ReceiptExample.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
