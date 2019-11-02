@@ -29,7 +29,7 @@ import com.adeo.qsf.service.mapper.ReceiptExampleMapper;
  */
 @Service
 @Transactional(readOnly = true)
-public class ReceiptExampleQueryService extends QueryService<ReceiptExample> {
+public class ReceiptExampleQueryService extends CorrectedQueryService<ReceiptExample> {
 
     private final Logger log = LoggerFactory.getLogger(ReceiptExampleQueryService.class);
 

@@ -29,7 +29,7 @@ import com.adeo.qsf.service.mapper.CommandExampleMapper;
  */
 @Service
 @Transactional(readOnly = true)
-public class CommandExampleQueryService extends QueryService<CommandExample> {
+public class CommandExampleQueryService extends CorrectedQueryService<CommandExample> {
 
     private final Logger log = LoggerFactory.getLogger(CommandExampleQueryService.class);
 
@@ -93,8 +93,7 @@ public class CommandExampleQueryService extends QueryService<CommandExample> {
                 specification = specification.and(buildStringSpecification(criteria.getDescription(), CommandExample_.description));
             }
             if (criteria.getReceiptExampleId() != null) {
-                specification = specification.and(buildSpecification(criteria.getReceiptExampleId(),
-                    root -> root.join(CommandExample_.receiptExample, JoinType.LEFT).get(ReceiptExample_.id)));
+                specification = specification.and(buildSpecification(criteria.getReceiptExampleId(), root -> root.join(CommandExample_.receiptExample, JoinType.LEFT).get(ReceiptExample_.id)));
             }
         }
         return specification;
