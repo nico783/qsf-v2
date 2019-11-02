@@ -43,18 +43,6 @@ public class CommandExampleQueryService extends CorrectedQueryService<CommandExa
     }
 
     /**
-     * Return a {@link List} of {@link CommandExampleDTO} which matches the criteria from the database.
-     * @param criteria The object which holds all the filters, which the entities should match.
-     * @return the matching entities.
-     */
-    @Transactional(readOnly = true)
-    public List<CommandExampleDTO> findByCriteria(CommandExampleCriteria criteria) {
-        log.debug("find by criteria : {}", criteria);
-        final Specification<CommandExample> specification = createSpecification(criteria);
-        return commandExampleMapper.toDto(commandExampleRepository.findAll(specification));
-    }
-
-    /**
      * Return a {@link Page} of {@link CommandExampleDTO} which matches the criteria from the database.
      * @param criteria The object which holds all the filters, which the entities should match.
      * @param page The page, which should be returned.

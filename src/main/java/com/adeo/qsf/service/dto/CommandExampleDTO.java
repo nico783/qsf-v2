@@ -11,7 +11,6 @@ public class CommandExampleDTO implements Serializable {
 
     private String description;
 
-
     private Long receiptExampleId;
 
     public Long getId() {
