@@ -23,7 +23,6 @@
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-
     </changeSet>
 
     <!--
@@ -46,7 +45,20 @@
     </changeSet>
 
     <changeSet id="20191102093828-1-relations" author="jhipster">
-
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <changeSet author="Nicolas Benizri"
+               id="001"
+               objectQuotingStrategy="LEGACY">
+        <addColumn catalogName="qsf2"
+                   schemaName="public"
+                   tableName="command_example">
+            <column name="created_by" type="varchar(50)"/>
+            <column name="created_date" type="date"/>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="date"/>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>
