@@ -12,7 +12,7 @@ import javax.persistence.metamodel.SingularAttribute;
  *
  * @author Nicolas Benizri
  */
-public class CorrectedQueryService<ENTITY> extends QueryService<ENTITY> {
+public abstract class CorrectedQueryService<ENTITY> extends QueryService<ENTITY> {
 
     /**
      * This method allows the management of RangeFilters (and therefore GreaterThan, GreaterOrEqualThan, LessThan, LessOrEqualThan, LessOrEqualThan filters).

@@ -58,7 +58,6 @@ public class ReceiptExampleService {
             .map(receiptExampleMapper::toDto);
     }
 
-
     /**
      * Get one receiptExample by id.
      *

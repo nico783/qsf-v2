@@ -58,7 +58,6 @@ public class CommandExampleService {
             .map(commandExampleMapper::toDto);
     }
 
-
     /**
      * Get one commandExample by id.
      *
